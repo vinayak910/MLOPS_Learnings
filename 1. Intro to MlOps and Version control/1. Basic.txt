@@ -91,6 +91,7 @@ Git commands :
 - not for windows , prefer bash for these commands
 
 1. git -v or git --version : For checking git is present or not. 
+
 2. git --help or git -h : for docs
 
 3. git init : For initializing empty folder. Later on IN that file , the snapshots of commit will be stored. 
@@ -105,3 +106,36 @@ Git commands :
 
 8. git commit -m "added Feature": takes snapshot of feature with small message
 
+9. git restore file_name : Will restore the changes that is done to file to the last commit 
+
+10. git log : info about commits 
+
+11. git log --oneline : info about commits but in short
+
+
+Branching
+----------
+- Branching is used for parallel development . Understanding through example.
+
+example : 
+
+Main Branch: A (Manager) is the main branch, responsible for overseeing the entire process. A provides tasks to B and C, which are part of the Data Preprocessing step.
+
+Branching: B and C create separate branches, working independently of each other. B focuses on imputing missing values in 2 numerical columns, while C works on encoding categorical columns.
+
+Parallel Work: B and C work on their respective branches ie Development is going on parallelly
+
+After B and C work is done. 
+
+Model Training: When it's time for model training, A assigns E to work on a Random Forest model and assigns B to work on a Logistic Regression model. Again, B and E create separate branches, working independently of each other.
+
+Benefits: The beauty of branching is that: While there is work going on other branches. But we can still continue to work on main branch.
+
+
+Branching commands
+--------------------
+1. git switch -c vinayak : create and switch to branch named by 'vinayak'
+
+2. git branch : To view branches ('*' shows which branch you at main or other branch you created)
+
+3. git switch branch_name: To switch between branches
