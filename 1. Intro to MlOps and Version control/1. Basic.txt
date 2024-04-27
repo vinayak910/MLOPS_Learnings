@@ -7,7 +7,7 @@ The purpose of Mlops is to deploy a model in such a way :
 1. Scalable : able to handle large users. 
 2. Reproducibility : Efficieny which is in local should be same and maintained after the deployment
 3. Automation : use of pipelines , which avoids retraining and deployment of your model easy, without from scratch .
-4. Version Control :
+4. Version Control 
 
 
 
@@ -15,7 +15,7 @@ The purpose of Mlops is to deploy a model in such a way :
 
 
 topic : Version control
-----------------------------
+==========================
 
 - In Machine learning , the version control is different.
 - Normally ,we use github for version control of code . 
@@ -30,3 +30,78 @@ b) Data
 c) Code
 
 Ex : For a model A , you have Data A , and Code A . YOu have to version control them together 
+
+
+
+
+
+ Basic commands
+ ---------------
+
+1. mkdir directory_name : for new directory 
+2. cd : For changing the path
+3. cp : Copy directory 
+
+
+ Paths
+ --------
+
+- forward slash '/' : for linux and max
+- backward slash '\': for windows
+
+
+1. Absolute path : 
+- Complete address
+- ex : C:\Users\Anaconda.........
+
+2. Relative path : 
+- already present in some directory and have to navigate subdirectories from there. 
+ex1: cd .\test\ : 
+- '.' is the relative path  ie current directory
+
+- '..' for parent directory 
+
+
+NOTE : 
+
+1. We will use Pathlib module for building paths , instead of OS module. As os module directly communicates with os which is risky , when there is some error in the code.
+
+2. Pathlib automatically adds backslash for windows and frontslash for linux or mac. 
+
+
+
+Version Control of Code(GIT for software development)
+============================
+- Imagine you're working on a big puzzle, and you're adding pieces to it every day. Version control is like keeping track of all the pieces you've added, so you can always go back to a previous version if something goes wrong.
+
+- Git is used for version control
+- Git take snapshots of code , when there is an important change such as feature update.
+- do not use for small changes
+
+
+Benefits
+----------
+- keeping track of development stages
+- ease up collaboration 
+- Diffing capabilities : you can know ->where change occur , what is the change , who changed.
+
+
+Git commands : 
+--------------
+- not for windows , prefer bash for these commands
+
+1. git -v or git --version : For checking git is present or not. 
+2. git --help or git -h : for docs
+
+3. git init : For initializing empty folder. Later on IN that file , the snapshots of commit will be stored. 
+
+4. touch file_name : For creating file 
+
+5. git status 
+
+6. git add file_name / git add . : add files to staging area (tracking of files has been start ie version tracking)
+
+7. git rm --cached <file> : For unstaging 
+
+8. git commit -m "added Feature": takes snapshot of feature with small message
+
