@@ -1,0 +1,32 @@
+MLOps : combination of two words . 
+1. ML: Machine learning
+2. OP : operations (software development)
+
+The purpose of Mlops is to deploy a model in such a way : 
+
+1. Scalable : able to handle large users. 
+2. Reproducibility : Efficieny which is in local should be same and maintained after the deployment
+3. Automation : use of pipelines , which avoids retraining and deployment of your model easy, without from scratch .
+4. Version Control :
+
+
+
+
+
+
+topic : Version control
+----------------------------
+
+- In Machine learning , the version control is different.
+- Normally ,we use github for version control of code . 
+- In machine learning , the version control isnt only dependent on code . It depends on two things :  1. Data 2. Code.
+
+- If data is changed , the model would be different
+- if code is changed ie Hyperameter tuning will change in  model and FE , Scaling will change the data, hence model would be different again. 
+
+- Therefore you want the version control in 3 aspects : 
+a) Model 
+b) Data
+c) Code
+
+Ex : For a model A , you have Data A , and Code A . YOu have to version control them together 
