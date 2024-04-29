@@ -1,0 +1,56 @@
+Virtual environments
+=====================
+
+Creating virtual environment using command
+----------------------------------------------
+-> python -m venv .\venv
+
+activate the environment
+-----------------------------------------------
+-> .\.venv\Scripts\activate
+
+installing through requirements file
+----------------------------------------------
+-> make a file name by requirements.txt and mention the packages you want to install 
+-> pip list : to see which packages are installed
+-> pip install -r requirements.txt : to install packages mentioned in requirements.txt file
+
+automatically making requirements file more efficiently
+--------------------------------------------------------
+
+-cmd :  pip freeze > requirements_new.txt
+- it will mention all the packages along with their versions  , you are using in the project. 
+- The mentioning of versions prevent from code break , as if there are no versions mentioned , there might be incompatibility between packages
+
+
+
+
+Need of virtual environments in MLOPS
+=========================================
+
+1.Increased Resource Usage: 
+------------------------------
+If you deploy machine learning models without virtual environments, the entire set of packages, including dependencies like TensorFlow and scikit-learn, may be bundled together into the deployment artifact. This can result in larger Docker images or virtual machine instances being deployed to the cloud, which may require more resources (such as CPU, memory, and storage) to run.
+
+2. Slower Deployment Times:
+----------------------------
+ Larger deployment artifacts can take longer to upload, deploy, and start up in cloud environments. This increased deployment time can result in higher costs, especially if you're deploying frequently or scaling up and down based on demand.
+
+3.Suboptimal Resource Allocation:
+--------------------------------
+ Without virtual environments, each deployment may include redundant copies of common dependencies, leading to suboptimal resource allocation. For example, if multiple deployed models use the same version of TensorFlow, each deployment may include its own copy of TensorFlow, resulting in wasted resources.
+
+4.Scaling Challenges:
+-----------------------
+ Scaling machine learning deployments in the cloud can become more challenging and costly without proper dependency management. Without virtual environments, scaling may require additional resources to accommodate larger deployment artifacts, leading to higher costs.
+
+5.Dependency Isolation: Different machine learning projects may require different versions of libraries or dependencies. Virtual environments allow you to isolate these dependencies, ensuring that each project has its own clean environment without conflicts.
+
+6.Reproducibility: Virtual environments help ensure that your code runs consistently across different environments. By specifying the exact versions of libraries used in your project, you can reproduce experiments and results reliably, even when deployed to different systems or at different times.
+
+7.Collaboration: In collaborative MLOps environments, multiple team members may be working on the same project. Virtual environments make it easier to share code and ensure that everyone is using the same set of dependencies, reducing the chances of compatibility issues.
+
+8.Deployment Consistency: When deploying machine learning models into production, it's essential to have consistent environments to minimize deployment errors and ensure smooth operation. Virtual environments help achieve this consistency by packaging all necessary dependencies with the model.
+
+
+
