@@ -1,0 +1,42 @@
+- While branching, you should work independently of main branch. Do no interupt main branch , as main branch will be handle by author.
+
+- if you interupt it , there will be a conflict. 
+
+- Git compares line by line , it will tell where you change the main branch code , while working with your branch.
+
+
+
+GIT merges
+-----------
+cmd : git merge branch_name
+
+Note : to merge , you have to switch to main branch first, then use this command 
+
+Types of merges
+-----------------
+1. Three way merge (merge conflicts)
+2. Fast forward 
+
+
+
+Fast forward merging : 
+----------------------
+- when you created a branch , and you start development in the other branch  ,but did not continue the development of the main branch.
+- In this scenario , the merge will be easy . As the head pointer will simply move to latest commit in other branch and there will no other branch left , only main branch.
+
+
+better explaination of FFM 
+
+Fast forward merging is a type of merging strategy used in version control systems like Git. It occurs when the branch being merged has all of its commits directly on the main branch since the branching point. In other words, there are no divergent changes between the branches; the changes in the branch being merged can be applied directly onto the target branch without creating a merge commit.
+
+When you perform a fast forward merge, the version control system simply moves the pointer of the target branch to the latest commit of the branch being merged, essentially integrating the changes into the main branch's history without creating a new commit. This results in a linear history, as opposed to a branching history that occurs with regular merges.
+
+Fast forward merging is usually preferred when merging feature branches into the main development branch (e.g., master or main) because it keeps the commit history cleaner and easier to understand. However, it's not always possible, especially if there have been changes made on the main branch after the feature branch was created. In such cases, a regular merge is necessary to reconcile the differences.
+
+
+Three way merge
+----------------
+
+- you created an other branch and writing code , but also at the same time , main branch development is going on too.
+- and if in the other branch and main branch have a different code. In this situation , there will be error called merge conflict. As git checks line by line. and git will get confused which code to keep while merging 
+- and you have to solve that merge conflict. 
