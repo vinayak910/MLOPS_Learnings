@@ -1,0 +1,22 @@
+- Git is version control working in locally. 
+- To give collaboration feature online , you use github.
+
+->git remote -v : cmd for checking if github is connected or not 
+- Generally recommended the repository name of github should be same as the local folder. 
+
+
+commands for github
+---------------------
+
+1. git remote add origin...... :
+-  It will connect local repository to github. origin: This is a common convention used to refer to the default remote repository. 
+- "Origin" is just a nickname for the remote repository, and you can choose any name you want, but "origin" is the standard default name used by Git.
+
+2. git push origin main :
+
+The git push origin main command is used to push the changes from your local main branch to the remote repository named origin. Here's a breakdown of each part of the command:
+
+git push: This is the Git command used to push commits from your local repository to a remote repository.
+origin: This refers to the remote repository you've previously set up using the git remote add command. "Origin" is a common default name for the remote repository, but you can use any name you want.
+main: This specifies the local branch you want to push to the remote repository. In this case, you're pushing the changes from your local main branch.
+So, when you run git push origin main, Git will transmit the commits from your local main branch to the main branch of the remote repository identified by origin. This command is commonly used to share your changes with collaborators or to synchronize your work between your local repository and the remote repository.
