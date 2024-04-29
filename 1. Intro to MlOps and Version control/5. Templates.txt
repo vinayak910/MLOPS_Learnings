@@ -1,0 +1,12 @@
+Template
+
+- for template we use cookie cutter
+- need of templating : To give the project structure . and it should be common -> easy for collaboration
+
+steps
+-------
+
+- install cookiecutter
+- use this command -->     cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+- it will create a new folder by the name you will give when you run this command, and in that folder it will contain template for the project. 
+- refer to ---> `2. cookie cutter demo` folder to see the template
