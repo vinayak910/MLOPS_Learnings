@@ -1,0 +1,47 @@
+DVC : Data version control 
+
+Why DVC , when there is git?
+-----------------------------
+
+1. Handling Large Files: Git is not designed to handle large files efficiently, especially binary files like datasets, trained machine learning models, etc. 
+
+2. Versioning Data and Models : Git is specially designed for code.Git tracks line by line. It cannot see changes in csv files and pickle files (binary file) , so to keep a track of changes in these git is not good.  It do handle the data , code and model collectively. 
+
+
+How dvc tracks for data and model
+-----------------------------------
+
+model : it stores meta data bout it, such as size , location . So if we delete rows from data , our size will decrease. 
+
+models : lets say you train random forest with 200 trees , you update this by training with 100 trees , the size will obviously decrease.
+
+- That's how dvc keep track of model and data.
+
+- in short , dvc keeps mainly 3 info:
+1. File size
+2. file location
+3. no of files.
+4. Hash
+
+- and stores these info in .dvc file but it do not have the capabilities of versioning. So it uses git for version control. 
+
+- Git cant track changes for model and data , but it can track code files .and .dvc is also code file which have the above informations.
+
+how ?
+----
+
+git keep track of changes of code (src folder) . to also keep track of current model and data , make 2 files .  1 .dvc model 
+2. .dvc data. 
+
+
+now git will collectively version control these ie src , .dvc model , .dvc data.
+
+
+ex : 
+- Lets say we want a model trained on particular data in past.  
+- git checkout commit_value
+- layout will contain src folder , .dvc model , src. 
+- we wanted model , it will give also the data on which model is trained and also the src code using we made the model. 
+
+
+
