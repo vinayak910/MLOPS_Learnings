@@ -1,0 +1,55 @@
+ Breaking down DVC documentation : 
+-------------------------------------
+1. dvc init -> 2 internal files will be created in .dvc folder. 1-> .gitignore  2. -> config
+
+2. git commit -m "Intitalize DVC"
+
+3. lets say we have a data by name : data.xml . Now to keep track of that file we will use 
+cmd : dvc add data/data.xml . 
+It will create a dvc file , and will store meta data about that file. Now we will use git to keep track of that git file
+
+4. git add data/data.xml.dvc data/.gitignore
+   git commit -m "Add raw data"
+
+5. cache file : while dvc init ,  also creates cache file. Which prevents when switching/checkout to previous commit . it maintains local copies of previous (not too old) commits , which prevents of loading though internet.
+
+
+6. To storing and share : You can upload DVC-tracked data to a variety of storage systems (remote or local) referred to as "remotes".
+
+DVC supports many remote storage types, including Amazon S3, NFS, SSH, Google Drive, Azure Blob Storage, and HDFS.
+
+An example for a common use case is configuring an Amazon S3 remote:
+
+dvc remote add -d storage s3://mybucket/dvcstore
+(just like connecting git to github -> git remote add origin ......)
+
+7. Uploading data : dvc push
+
+
+
+
+
+
+
+ Building basics
+------------------------
+
+1. we already have a template , before using dvc init. You must initialize git . (git init , git add , git commit)
+
+2.Then use dvc init will make .dvc folder which will contain two subfolders ie config and cache.
+
+	- cache file will contain local history of data and artifacts. artificates generally include model and plots
+
+
+NOTE : 
+- Downside of cookiecutter is it will include data and model into .gitignore that's why it will not track. But you have to remove these from .gitignore because the data folder contains .dvc files which stores the meta info about data.
+
+- .gitkeep : The .gitkeep file is a convention used in Git repositories to ensure that empty directories are tracked by Git.
+Git does not track directories themselves, only the files contained within them. Therefore, if you have an empty directory in your Git repository and you want to include it in version control, you need to add a file inside that directory. Conventionally, this file is named .gitkeep.
+The name .gitkeep is arbitrary; you could use any filename.
+
+
+3. Lets say we have a folder name data , that will contain train.csv file . now if we use the cmd : 
+dvc add train.csv ,
+- it will create a train.csv.dvc which will contain meta info about that train.csv .and it will tell git to do not track the train.csv file ie basically dvc will add train.csv to .gitignore.
+- But dvc do not have version contol capabilities , that will track change in dvc file . for tracking changes in .dsv file we will use git. 

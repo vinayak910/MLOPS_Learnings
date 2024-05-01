@@ -3,7 +3,7 @@ Virtual environments
 
 Creating virtual environment using command
 ----------------------------------------------
--> python -m venv .\venv
+-> python -m venv .\.venv
 
 activate the environment
 -----------------------------------------------
